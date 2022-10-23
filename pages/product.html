@@ -1,0 +1,55 @@
+<div class="product-detail">
+  <div class="breadcrumb-detail">
+    <div class="container">
+      <nav>
+        <a href="/">Home</a><span> / </span><a href="#shop">Shop</a
+        ><span> / </span>{{product.name}}
+      </nav>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="product-item">
+          <span class="onsale">Sale!</span>
+          <div class="product-transition">
+            <i class="fa fa-heart button-heart" id="heart"></i>
+            <img
+              class="img-fluid"
+              src="/image/{{product.image}}.png"
+              alt=""
+              style="width: 200%"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 product-detail-title">
+        <h1>{{product.name}}</h1>
+        <p>{{product.detail}}</p>
+        <div class="price-detail mb-3">
+          <span>{{product.price| currency :'':0}} VNĐ</span>
+          <span><del>{{product.price_old | currency :'':0}} VNĐ</del></span>
+        </div>
+        <div class="row">
+          <div class="col-md-4 input-counter">
+            <span class="minus-btn"><i class="fa fa-minus"></i></span>
+            <input
+              ng-init="soluong = 1"
+              ng-model="soluong"
+              type="text"
+              value="soluong"
+            />
+            <span class="plus-btn"><i class="fa fa-plus"></i></span>
+          </div>
+          <button
+            type="button"
+            class="col-md-8 btn btn-danger"
+            ng-click="cart.addItem(product.id, product.name, product.price, soluong)"
+          >
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

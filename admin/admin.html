@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAdmin">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="admin.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-4">Trang quản trị admin</h1>
+      <div class="container">
+        <ul class="nav nav-pills mb-4">
+          <li class="nav-item">
+            <a class="nav-link active" href="#product-manager"
+              >Quản lý sản phẩm</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#category-manager">Quản lý thể loại</a>
+          </li>
+        </ul>
+        <div ng-view></div>
+      </div>
+    </div>
+
+    <script src="/js angular/angular.js"></script>
+    <script src="/js angular/angular-route.js"></script>
+    <script src="/assets/script/bootstrap.bundle.min.js"></script>
+    <script src="admin.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("ul li a").click(function () {
+          $("li a").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

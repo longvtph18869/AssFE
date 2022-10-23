@@ -1,0 +1,40 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  height: 100%;
+}
+html {
+  font-size: 16px;
+}
+body {
+  line-height: 1;
+  font-size: 16px;
+  font-family: "Baloo Bhai", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+ol li,
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}

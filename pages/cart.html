@@ -1,0 +1,103 @@
+<div class="product-detail mb-5">
+  <div class="breadcrumb">
+    <div class="col-full">
+      <h1>Giỏ hàng</h1>
+      <nav><a href="/">Home</a><span> / </span>Giỏ hàng</nav>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-bottom: 100px">
+        <table class="table align-middle mb-0 bg-white border">
+          <thead class="bg-light border">
+            <tr>
+              <th></th>
+              <th>Tên sản phẩm</th>
+              <th>Đơn giá</th>
+              <th>Số lượng</th>
+              <th>Tạm tính</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-hide="cart.getTotalCount() > 0">
+              <td class="tdCenter text-center" colspan="5">
+                Chưa có sản phẩm nào trong giỏ hàng.
+              </td>
+            </tr>
+            <tr ng-repeat="item in cart.items ">
+              <td
+                class="tdCenter"
+                title="remove from cart"
+                style="max-width: 50px"
+              >
+                <a
+                  href=""
+                  ng-click="cart.addItem(item.id, item.name, item.price, -10000000)"
+                >
+                  <i class="fa fa-remove"></i>
+                </a>
+              </td>
+              <td>{{item.name}}</td>
+              <td style="width: 200px">{{item.price | currency :'':0}} VNĐ</td>
+              <td style="width: 150px">
+                <div class="input-append">
+                  <button
+                    class="btn btn-warning"
+                    type="button"
+                    ng-disabled="item.quantity <= 1"
+                    ng-click="cart.addItem(item.id, item.name, item.price, -1)"
+                  >
+                    -
+                  </button>
+                  <input
+                    class="text-center"
+                    type="tel"
+                    style="width: 30px; height: 30px"
+                    ng-model="item.quantity"
+                    ng-change="cart.saveItems()"
+                  />
+                  <button
+                    class="btn btn-success"
+                    type="button"
+                    ng-disabled="item.quantity >= 1000"
+                    ng-click="cart.addItem(item.id, item.name, item.price, +1)"
+                  >
+                    +
+                  </button>
+                </div>
+              </td>
+              <td class="tdRight">
+                {{item.price * item.quantity | currency :'':0}} VNĐ
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6"></div>
+      <div class="col-md-6" ng-hide="cart.getTotalCount() <= 0">
+        <h3>Cộng giỏ hàng</h3>
+        <table class="table align-middle mb-0 bg-white border mt-3 mb-3">
+          <tbody>
+            <tr>
+              <td>Tạm tính</td>
+              <td class="tdRight">
+                {{cart.getTotalPrice() | currency :'':0}} VNĐ
+              </td>
+            </tr>
+            <tr>
+              <td>Giao hàng</td>
+              <td>30.000 VNĐ</td>
+            </tr>
+            <tr>
+              <td>Tổng</td>
+              <td>{{cart.getTotalPrice() + 30000 | currency :'':0}} VNĐ</td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-danger px-5 py-2">
+          Thanh toán
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

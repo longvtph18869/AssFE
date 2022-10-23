@@ -1,0 +1,152 @@
+<form
+  class="mb-3"
+  id="form_create_product"
+  ng-submit="onFormProductSubmit($event)"
+>
+  <div class="row">
+    <div class="col-md-6">
+      <input
+        type="text"
+        value="{{product.id}}"
+        ng-model="product.id"
+        style="display: none"
+      />
+      <label>Tên sản phẩm</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ten"
+        ng-model="product.name"
+        value="{{product.name}}"
+      />
+      <label>Detail</label>
+      <input
+        type="text"
+        class="form-control"
+        id="detail"
+        ng-model="product.detail"
+        value="{{product.detail}}"
+      />
+      <label>Giá cũ</label>
+      <input
+        type="text"
+        class="form-control"
+        id="price_old"
+        ng-model="product.price_old"
+        value="{{product.price_old}}"
+      />
+    </div>
+    <di class="col-md-6"
+      ><label>Giá mới</label>
+      <input
+        type="text"
+        class="form-control"
+        id="price"
+        ng-model="product.price"
+        value="{{product.price}}"
+      />
+      <label>Ảnh</label>
+      <input
+        type="text"
+        class="form-control"
+        id="image"
+        ng-model="product.image"
+        value="{{product.image}}"
+      />
+      <label>Thể loại</label>
+      <select class="form-control" ng-model="product.category">
+        <option ng-repeat="x in categorys">{{x.name}}</option>
+      </select></di
+    >
+  </div>
+  <div class="modal-footer mt-3">
+    <button type="submit" class="btn btn-success me-4">
+      <i class="fa fa-plus"
+        ><span style="margin-left: 10px">Thêm sản phẩm</span></i
+      >
+    </button>
+    <button
+      type="button"
+      class="btn btn-success"
+      ng-click="editProduct(product)"
+    >
+      <i class="fa fa-edit"><span style="margin-left: 10px">Sửa</span></i>
+    </button>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-9"></div>
+    <div class="col-md-3">
+      <div class="input-group">
+        <input
+          class="form-control border"
+          type="search"
+          placeholder="search"
+          id="example-search-input"
+          ng-model="searchText"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+<table class="table align-middle mb-0 bg-white">
+  <thead class="bg-light">
+    <tr>
+      <th>STT</th>
+      <th>Tên sản phẩm</th>
+      <th>Detail</th>
+      <th>Giá cũ</th>
+      <th>Giá mới</th>
+      <th>Thể loại</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="product in products | filter:searchText">
+      <td>{{product.id}}</td>
+      <td style="width: 300px">
+        <div class="d-flex align-items-center">
+          <img
+            src="/image/{{product.image}}.png"
+            alt=""
+            style="width: 70px; height: 70px"
+            class="rounded-circle"
+          />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">{{product.name}}</p>
+          </div>
+        </div>
+      </td>
+      <td style="width: 300px">
+        <p class="fw-normal mb-1">{{product.detail}}</p>
+      </td>
+      <td style="width: 200px">
+        <span>{{product.price_old}}</span>
+      </td>
+      <td style="width: 200px">
+        <span>{{product.price}}</span>
+      </td>
+      <td style="width: 200px">
+        <span>{{findNameById(product.category)}}</span>
+      </td>
+      <td>
+        <div class="d-flex">
+          <button
+            type="button"
+            class="btn btn-warning me-2"
+            ng-click="selectProduct(product)"
+            onclick="window.scrollTo(0, 0);"
+          >
+            <i class="fa fa-pencil"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            ng-click="deleteProduct(product)"
+          >
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

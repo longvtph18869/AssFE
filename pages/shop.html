@@ -1,0 +1,123 @@
+<div class="product">
+  <div class="breadcrumb">
+    <div class="col-full">
+      <h1>Shop</h1>
+      <nav><a href="/">Home</a><span> / </span>Shop</nav>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-12">
+        <div class="product-list">
+          <div class="row">
+            <div
+              class="col-lg-4"
+              ng-repeat="product in products | filter:getFilter() | filter:searchText"
+            >
+              <div class="product-item">
+                <span class="onsale">Sale!</span>
+                <div class="product-transition">
+                  <i class="fa fa-heart button-heart" id="heart"></i>
+                  <img src="/image/{{product.image}}.png" alt="" />
+                </div>
+                <div class="product-caption">
+                  <h3 class="product-name">
+                    <a
+                      onclick="window.scrollTo(0, 0);"
+                      href="#/products/{{product.name}}"
+                      >{{product.name}}</a
+                    >
+                  </h3>
+                  <h6 class="short-description">{{product.detail}}</h6>
+                  <div class="price">
+                    <div class="price-number">
+                      <span
+                        ><del
+                          >{{product.price_old | currency :'':0}} VNĐ</del
+                        ></span
+                      >
+                      <p>{{product.price | currency :'':0}} VNĐ</p>
+                    </div>
+                    <div class="add-to-cart text-end">
+                      <button
+                        ng-click="cart.addItem(product.id, product.name, product.price, 1)"
+                      >
+                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-12">
+        <div class="category-filter">
+          <span class="ms-3">Categories</span>
+          <ul class="product-categories">
+            <li
+              ng-repeat="category in categorys"
+              ng-click="catFun(category.id)"
+              class="cat-item cat-item-33"
+            >
+              <a href="">
+                <i class="{{category.icon}}"></i>
+                <span>{{category.name}}</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="search">
+          <form class="search-form">
+            <input
+              type="search"
+              value=""
+              placeholder="Search"
+              class="search-input"
+              ng-model="searchText"
+            />
+            <button type="submit" class="search-button">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+        <div class="wrapper">
+          <header>
+            <h2>Price Range</h2>
+          </header>
+          <div class="price-input">
+            <div class="field">
+              <input type="number" class="input-min" value="0" />
+            </div>
+            <div class="separator">-</div>
+            <div class="field">
+              <input type="number" class="input-max" value="500000" />
+            </div>
+          </div>
+          <div class="slider">
+            <div class="progress"></div>
+          </div>
+          <div class="range-input">
+            <input
+              type="range"
+              class="range-min"
+              min="0"
+              max="10000"
+              value="0"
+              step="100"
+            />
+            <input
+              type="range"
+              class="range-max"
+              min="0"
+              max="1000000"
+              value="500000"
+              step="100"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

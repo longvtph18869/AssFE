@@ -1,0 +1,401 @@
+<section class="img-slider">
+  <div class="slider-container">
+    <div class="slide-item">
+      <img class="img-fluid" src="image/slide1.png" />
+    </div>
+    <div class="slide-item">
+      <img class="img-fluid" src="image/slide2.jpg" />
+    </div>
+    <div class="slide-item">
+      <img class="img-fluid" src="image/slide3.jpg" />
+    </div>
+  </div>
+</section>
+<div class="container menu-content mb-5">
+  <div class="row">
+    <div class="button-menu text-center">
+      <button
+        style="font-size: 20px; color: black"
+        type="submit"
+        class="title btn btn-warning btn-lg btn-block px-5"
+      >
+        MENUS
+      </button>
+    </div>
+  </div>
+  <div class="row py-5">
+    <div class="col text-center menu">
+      <img class="img-fluid" src="image/menu1.png" alt="" /><br />
+      <span class="cats-title-text">COMBO</span>
+    </div>
+    <div class="col text-center menu">
+      <img class="img-fluid" src="image/menu2.png" alt="" /><br />
+      <span class="cats-title-text">KIDS MENU</span>
+    </div>
+    <div class="col text-center menu">
+      <img class="img-fluid" src="image/menu3.png" alt="" /><br />
+      <span class="cats-title-text">PIZZA</span>
+    </div>
+    <div class="col text-center menu">
+      <img class="img-fluid" src="image/menu4.png" alt="" /><br />
+      <span class="cats-title-text">BOX MEALS</span>
+    </div>
+    <div class="col text-center menu">
+      <img class="img-fluid" src="image/menu5.png" alt="" /><br />
+      <span class="cats-title-text">BURGER</span>
+    </div>
+    <div class="col text-center menu">
+      <img class="img-fluid" src="image/menu6.png" alt="" /><br />
+      <span class="cats-title-text">CHICKEN</span>
+    </div>
+    <div class="col text-center menu">
+      <img class="img-fluid" src="image/menu7.png" alt="" /><br />
+      <span class="cats-title-text">SAUCES</span>
+    </div>
+    <div class="col text-center menu">
+      <img class="img-fluid" src="image/menu8.png" alt="" /><br />
+      <span class="cats-title-text">DRINKS</span>
+    </div>
+  </div>
+</div>
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+        <div class="banner-content">
+          <div class="banner-img">
+            <img src="image/banner1-1.png" />
+            <div class="image-behind">
+              <img src="image/banner1.png" />
+            </div>
+          </div>
+          <h2>
+            Ưu đãi <br />
+            mọi lúc
+          </h2>
+          <div
+            style="
+              font-size: 12px;
+              text-transform: uppercase;
+              line-height: 20px;
+              text-shadow: 1px 1px 10px #fff;
+              margin-bottom: 15px;
+              color: #1e1d23;
+            "
+          >
+            hương vị bánh mì<br />
+            kẹp thịt mới
+          </div>
+          <div>
+            <a
+              style="
+                font-size: 20px;
+                font-weight: 700;
+                color: #00a850;
+                background-color: #02010100;
+                padding: 0;
+              "
+            >
+              <span> 59.000 VNĐ </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+        <div
+          style="
+            background-image: url(image/background-banner2.jpg);
+            border-radius: 5px 5px 5px 5px;
+          "
+          class="banner-content"
+        >
+          <div class="banner-img">
+            <img src="image/banner2-1.png" />
+            <div class="image-behind">
+              <img src="image/banner2.png" />
+            </div>
+          </div>
+          <h2>
+            Hương <br />
+            vị khác
+          </h2>
+          <div
+            style="
+              font-size: 12px;
+              text-transform: uppercase;
+              line-height: 20px;
+              text-shadow: 1px 1px 10px #fff;
+              margin-bottom: 15px;
+              color: #1e1d23;
+            "
+          >
+            CỬA HÀNG<br />
+            VỚI MÓN SALADS
+          </div>
+          <div>
+            <a
+              style="
+                font-size: 20px;
+                font-weight: 700;
+                color: #ffc222;
+                background-color: #02010100;
+                padding: 0;
+              "
+            >
+              <span> $12.90 </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+        <div class="banner-content">
+          <div class="banner-img">
+            <img src="image/banner3-1.png" />
+            <div class="image-behind">
+              <img src="image/banner3.png" />
+            </div>
+          </div>
+          <h2>
+            Tìm một<br />
+            cửa hàng <br />
+            gần bạn
+          </h2>
+
+          <div>
+            <a
+              style="
+                font-size: 20px;
+                font-weight: 700;
+                color: #ffc222;
+                background-color: #02010100;
+                padding: 0;
+              "
+            >
+              <span>CONTACT US </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="product">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <h2 class="title">Popular dishes</h2>
+    </div>
+    <div class="row text-center mb-5">
+      <ul>
+        <li
+          ng-repeat="category in categorys"
+          ng-click="catFun(category.id)"
+          class="category-title"
+          style="background-color: #ffc222"
+        >
+          <a href="">{{category.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="product-list">
+      <div class="row">
+        <div
+          class="col-lg-3"
+          ng-repeat="product in products | filter:getFilter() | limitTo:8"
+        >
+          <div class="product-item">
+            <span class="onsale">Sale!</span>
+            <div class="product-transition">
+              <i class="fa fa-heart button-heart" id="heart"></i>
+              <img src="image/{{product.image}}.png" alt="" />
+            </div>
+            <div class="product-caption">
+              <h3 class="product-name">
+                <a
+                  onclick="window.scrollTo(0, 0);"
+                  href="#/products/{{product.name}}"
+                  >{{product.name}}</a
+                >
+              </h3>
+              <h6 class="short-description">{{product.detail}}</h6>
+              <div class="price">
+                <div class="price-number">
+                  <span
+                    ><del>{{product.price_old | currency :'':0}} VNĐ</del></span
+                  >
+                  <p>{{product.price | currency :'':0}} VNĐ</p>
+                </div>
+                <div class="add-to-cart text-end">
+                  <button
+                    ng-click="cart.addItem(product.id, product.name, product.price, 1)"
+                  >
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="all-product text-center">
+        <a href="#shop"
+          ><button onclick="window.scrollTo(0, 0);">All products</button></a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div class="banner-2">
+  <div class="row">
+    <img class="img-fluid" src="image/banner-2.PNG" alt="" />
+  </div>
+</div>
+<div class="top-product">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row mt-3 mb-4">
+          <div class="col-lg-10">
+            <h3 class="title">Top recipes</h3>
+          </div>
+          <div class="col-lg-2">
+            <a
+              href="#shop"
+              onclick="window.scrollTo(0, 0);"
+              style="font-size: 20px"
+              >See all</a
+            >
+            <a href="#shop" onclick="window.scrollTo(0, 0);" class="next-round"
+              >&#8250;</a
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-6 mb-3"
+            ng-repeat="product in products | limitTo:6"
+          >
+            <div class="top-product-item">
+              <img src="image/{{product.image}}.png" alt="" />
+              <div class="top-product-content">
+                <a href="#/products/{{product.name}}">{{product.name}}</a>
+                <p href="">{{findNameById(product.category)}}</p>
+                <div class="price">
+                  <div class="price-number">
+                    <span
+                      ><del
+                        >{{product.price_old | currency :'':0}} VNĐ</del
+                      ></span
+                    >
+                    <p>{{product.price | currency :'':0}} VNĐ</p>
+                  </div>
+                  <div class="add-to-cart text-end">
+                    <button
+                      ng-click="cart.addItem(product.id, product.name, product.price, 1)"
+                    >
+                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-fluid" src="image/quang-cao.PNG" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="news">
+  <div class="container">
+    <div class="row">
+      <h3 class="title mb-4">Latest news</h3>
+      <div class="col-lg-4 mb-4">
+        <div class="news-item">
+          <div class="news-image">
+            <img src="image/news1.jpg" alt="Post image" />
+          </div>
+          <div class="news-information px-4">
+            <div class="news-date mb-3">
+              <a href="">November 24, 2015 / Post by Vũ Tiến Long</a>
+            </div>
+            <div class="news-title">
+              <a class="mb-4" href="#"
+                >Bánh quy mềm truyền thống với pho mát bia ngọt</a
+              >
+              <p>
+                Bánh quy thơm thơm, lớp vỏ ngoài màu trắng có vị truyền thống
+                thơm bơ. Bánh quy truyền thống Zess gói 80g dinh dưỡng, ngon
+                miệng rất kích thích vị giác và lạ miệng.
+              </p>
+              <button
+                style="font-size: 16px; color: black"
+                type="submit"
+                class="title btn btn-warning btn-lg btn-block px-5 py-0 mb-3"
+              >
+                READ MORE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="news-item">
+          <div class="news-image">
+            <img src="image/news2.jpg" alt="Post image" />
+          </div>
+          <div class="news-information px-4">
+            <div class="news-date mb-3">
+              <a href="">November 24, 2015 / Post by Vũ Tiến Long</a>
+            </div>
+            <div class="news-title">
+              <a class="mb-4" href="#"
+                >Bánh quy mềm truyền thống với pho mát bia ngọt</a
+              >
+              <p>
+                Bánh quy thơm thơm, lớp vỏ ngoài màu trắng có vị truyền thống
+                thơm bơ. Bánh quy truyền thống Zess gói 80g dinh dưỡng, ngon
+                miệng rất kích thích vị giác và lạ miệng.
+              </p>
+              <button
+                style="font-size: 16px; color: black"
+                type="submit"
+                class="title btn btn-warning btn-lg btn-block px-5 py-0 mb-3"
+              >
+                READ MORE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="news-item">
+          <div class="news-image">
+            <img src="image/news3.jpg" alt="Post image" />
+          </div>
+          <div class="news-information px-4">
+            <div class="news-date mb-3">
+              <a href="">November 24, 2015 / Post by Vũ Tiến Long</a>
+            </div>
+            <div class="news-title">
+              <a href="#">Bánh quy mềm truyền thống với pho mát bia ngọt</a>
+              <p>
+                Bánh quy thơm thơm, lớp vỏ ngoài màu trắng có vị truyền thống
+                thơm bơ. Bánh quy truyền thống Zess gói 80g dinh dưỡng, ngon
+                miệng rất kích thích vị giác và lạ miệng.
+              </p>
+              <button
+                style="font-size: 16px; color: black"
+                type="submit"
+                class="title btn btn-warning btn-lg btn-block px-5 py-0 mb-3"
+              >
+                READ MORE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
